@@ -22,7 +22,7 @@ public class HashTag {
 
     private String tagName; //해시태그 이름
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "post_no") //상대방 pk 이름과 같게 (똑같이 안해도도 되긴함)
     private Post post;
 

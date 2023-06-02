@@ -42,7 +42,7 @@ public class Post {
     private LocalDateTime updateDate; //수정시간
 
     //db에 넣는 용도가 아닌 조회용도
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "post", orphanRemoval = true)
     @Builder.Default //빌더의 기본값 추가
                     //아무리 빌더를 넣어도 초기화가 되지 않음으로 이를 방지하기 위해서 Builder.Default 어노테이션 삽입 필수
     private List<HashTag> hashTags = new ArrayList<>();
